@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+-->
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+
+<html xmlns:th="http://www.thymeleaf.org" 	 xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Peli Lista</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Pelit</h1>
+		<h3 th:inline="text"> Tervetuloa [[${#httpServletRequest.remoteUser}]]</h3>
+		
+		<div>
+			<form th:action="@{/logout}" method="post">
+				<input type="submit" value="Sign out" class="btn btn-sm btn-danger"/>
+			</form>
+		</div>
+		
+		<table class="table table-striped">
+		<tr>
+			<th>Nimi</th>
+			<th>Tekijä</th>
+			<th>Vuosi</th>
+			<th>Hinta</th>
+			<th>Kategoria</th>
+
+			<th></th>
+			<th></th>
+		</tr>
+		<tr th:each ="peli : ${pelit}">
+		<td th:text="${peli.nimi}"></td>
+		<td th:text="${peli.tekija}"></td>
+		<td th:text="${peli.vuosi}"></td>
+		<td th:text="${peli.hinta}"></td>
+		<td th:text="${book.category.nimi}"></td>
+		</tr>		
+		</table>
+		<a href="/pelilist" class="btn btn-success">Add</a>
+
+		
+</body>
+</html>

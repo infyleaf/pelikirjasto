@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Peli Lista</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Lisää peli</h1>
+	<div>
+		<form th:object="${peli}" th:action="@{save}" action="#" method="post">
+				<label for="nimi">Nimi</label>
+			<input type="text" id="nimi" th:field="*{nimi}">
+		<br>
+				<label for="tekija">Tekijä</label>
+			<input type="text" id="tekija" th:field="*{tekija}">
+		<br>
+				<label for="vuosi">Vuosi</label>
+			<input type="text" id="vuosi" th:field="*{vuosi}">
+		<br>
+				<label for="hinta">Hinta</label>
+			<input type="text" id="hinta" th:field="*{hinta}">
+		<br>	
+				<label for="categoryli">Category:</label>
+			<select id="categoryli" th:field="*{category}">
+			<option th:each="category: ${categories}" th:value="${category.id}" th:text="${category.nimi}"></option>
+
+			</select>
+		
+		<br>
+		
+		<input type="submit">
+	</form>
+	</div>
+		
+</body>
+</html>
