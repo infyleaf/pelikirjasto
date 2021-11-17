@@ -1,17 +1,20 @@
 <!DOCTYPE HTML>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <html xmlns:th="http://www.thymeleaf.org">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
 <head>
-<title>Peli Lista</title>
+<title>Book List</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Lisää peli</h1>
+	<h1>Edit book</h1>
 	<div>
-		<form th:object="${peli}" th:action="@{save}" action="#" method="post">
+		<form th:object="${peli}" th:action="@{/save}" action="#" method="post">
+	
+					<input type="hidden" id="title" th:field="*{id}">
+					<br>
 				<label for="nimi">Nimi</label>
-			<input type="text" id="nimi" th:field="*{nimi}">
+			<input type="text" id="nimi" th:field="*{nimi}"> 
 		<br>
 				<label for="tekija">Tekijä</label>
 			<input type="text" id="tekija" th:field="*{tekija}">
@@ -21,15 +24,14 @@
 		<br>
 				<label for="hinta">Hinta</label>
 			<input type="text" id="hinta" th:field="*{hinta}">
-		<br>	
-				<label for="categoryli">Category:</label>
+		<br>
+					<label for="categoryli">Kategoria:</label>
 			<select id="categoryli" th:field="*{category}">
 			<option th:each="category: ${categories}" th:value="${category.id}" th:text="${category.nimi}"></option>
 
 			</select>
-		
 		<br>
-				<input type="submit" class="btn btn-success">
+		<input type="submit" class="btn btn-success">
 			  	<a href="/pelilist" class="btn btn-danger">Peruuta</a>
 	
 	</form>

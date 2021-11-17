@@ -25,8 +25,8 @@ public class Peli {
 		
 
 
-	    @ManyToOne //book -> manytoone category
-	//    @JsonIgnoreProperties ("books") 
+	    @ManyToOne //-> manytoone category
+	   @JsonIgnoreProperties ("pelit") 
 	    @JoinColumn(name = "catId")	// FK
 		private Category category;
 		
@@ -40,7 +40,7 @@ public class Peli {
 		}
 		
 		public Peli() {
-			
+			super();
 		}
 		
 		public Long getId() {
@@ -54,7 +54,7 @@ public class Peli {
 		//categoriat
 		
 		public Category getCategory() {
-			return category;
+			return this.category;
 		}
 		public void setCategory(Category category) {
 			this.category = category;
@@ -87,7 +87,7 @@ public class Peli {
 
 		@Override
 		public String toString() {
-			return "Peli [nimi=" + nimi + ", tekija=" + tekija + ", hinta=" + hinta + ", vuosi=" + vuosi + "category=" + category.getNimi() +  "]";
+			return "Peli [nimi=" + nimi + ", tekija=" + tekija + ", hinta=" + hinta + ", vuosi=" + vuosi + "category=" + getCategory()+  "]";
 		}
 		
 		

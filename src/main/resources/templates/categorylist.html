@@ -7,11 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Categories</h1>
+	<h1>Kategoriat</h1>
+	<h3 th:inline="text"> Tervetuloa [[${#httpServletRequest.remoteUser}]]</h3>
 		<table class="table table-striped">
 		<tr>
 			<th>Nimi</th>
-
+			<th></th>
 		</tr>
 		<tr th:each = "category : ${categories}">
 		<td th:text="${category.nimi}"></td>
@@ -19,7 +20,10 @@
 		</tr>		
 		</table>
 		
-		<a href="/addcategory" class="btn btn-success">Add</a>
+		<a href="/addcategory" class="btn btn-success">Lisää Kategoria</a>
+		<br>
+		<br>
+  	<a href="/pelilist" class="btn btn-info">Pelilista</a>
 
 		
 </body>

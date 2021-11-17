@@ -31,10 +31,12 @@ public class PelikirjastoApplication {
 			Category cat3 = new Category("MOBA");
 			catrep.save(cat3);
 			
-			repository.save(new Peli("nimi", "teijö", 2005, 20, cat1));
+			repository.save(new Peli("Halo 3", "Bungie", 20, 2007, cat1));
+			repository.save(new Peli("League of Legends", "Riot Games", 0, 2009, cat3));
+			repository.save(new Peli("RuneScape", "Jagex", 11, 2002, cat2));
 
 			
-			log.info("fetch all books");
+			log.info("hae pelit");
 			for (Peli peli : repository.findAll()) {
 				log.info(peli.toString());
 			}

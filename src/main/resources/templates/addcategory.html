@@ -1,4 +1,6 @@
 <!DOCTYPE HTML>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Add Category</title>
@@ -10,10 +12,11 @@
 		<form th:object="${category}" th:action="@{savecat}" action="#" method="post">
 				<label for="name">Nimi</label>
 			<input type="text" id="nimi" th:field="*{nimi}">
-
-		<input type="submit">
+		<input type="submit" class="btn btn-success">
+			  	<a href="/pelilist" class="btn btn-danger">Peruuta</a>
 	</form>
-	</div>
+	</div><br>
+	
 		
 </body>
 </html>

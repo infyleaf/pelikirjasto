@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import hh.swd20.Pelikirjasto.domain.*;
 
 @Entity
@@ -20,6 +22,7 @@ public class Category {
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private long catId;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+	@JsonIgnoreProperties("category") 
 	private List<Peli> pelit;
 	private String nimi;
 	
