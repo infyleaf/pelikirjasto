@@ -19,7 +19,7 @@ import hh.swd20.Pelikirjasto.domain.*;
 @ExtendWith(SpringExtension.class)  // JUnit5 eli Jupiter
 @DataJpaTest
 public class PeliRepositoryTests {
-
+/*
 	@Autowired
 	private CategoryRepository repository;
 
@@ -30,7 +30,7 @@ public class PeliRepositoryTests {
         assertThat(cat).hasSize(1);
         assertThat(cat.get(0).getNimi()).isEqualTo("RPG");
     }
-    
+    */
 
 }
 	

@@ -23,7 +23,7 @@ import hh.swd20.Pelikirjasto.web.CategoryController;
 @DataJpaTest
 @RunWith(SpringRunner.class)
 class PelikirjastoApplicationTests {
-
+/*
 	@Autowired
 	private PeliController peliController;
 	
@@ -35,5 +35,5 @@ class PelikirjastoApplicationTests {
 	public void contextLoads() {
 	
 	}
-
+*/
 }
